@@ -14,52 +14,41 @@
 }
 body{background:var(--dark);color:var(--text);font-family:'DM Sans',sans-serif;min-height:100vh;overflow-x:hidden}
 
-/* HEADER */
 header{text-align:center;padding:2.5rem 1rem 1.75rem}
 .logo{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.8rem,9vw,5.5rem);letter-spacing:.05em;line-height:.85;background:linear-gradient(135deg,var(--yellow) 0%,var(--orange) 45%,var(--pink) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .logo span{display:block;font-size:.42em;letter-spacing:.18em;margin-top:.15em}
 .subtitle{margin-top:.9rem;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:.75rem}
 .subtitle::before,.subtitle::after{content:'';flex:1;max-width:60px;height:1px;background:var(--border)}
 
-/* STEPS */
 .step{display:none;max-width:900px;margin:0 auto;padding:0 1rem 6rem;animation:fadeUp .3s ease}
 .step.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 
-/* STEP HEADER */
 .step-eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange);margin-bottom:.3rem}
 .step-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,5vw,2.4rem);letter-spacing:.05em;line-height:1;margin-bottom:.4rem}
 .step-sub{font-size:.82rem;color:var(--muted);margin-bottom:1.5rem;line-height:1.6}
 
-/* SEARCH */
 .search-wrap{position:relative;margin-bottom:1.25rem}
 .search-input{width:100%;background:var(--card);border:1px solid var(--border);border-radius:10px;padding:.7rem 1rem .7rem 2.6rem;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.9rem;outline:none;transition:border-color .15s}
 .search-input:focus{border-color:var(--orange)}
 .search-input::placeholder{color:var(--muted)}
 .search-icon{position:absolute;left:.85rem;top:50%;transform:translateY(-50%);opacity:.4;pointer-events:none;font-size:.9rem}
 
-/* SECTION DIVIDERS */
 .section-label{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted2);margin:1.25rem 0 .6rem;padding-left:2px}
-
-/* ARTIST GRID */
 .artist-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.6rem}
 
-/* ARTIST BLOCK */
 .a-block{background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:.75rem;cursor:pointer;transition:all .15s;user-select:none;position:relative;display:flex;flex-direction:column;gap:.35rem}
 .a-block:hover{border-color:rgba(255,92,0,.5);transform:translateY(-1px)}
 .a-block.selected{border-color:var(--orange);background:rgba(255,92,0,.08)}
 .a-block.selected::after{content:'✓';position:absolute;top:.5rem;right:.6rem;font-size:.75rem;color:var(--orange);font-weight:600}
 .a-block.hidden{display:none}
-
 .a-name{font-size:.88rem;font-weight:600;line-height:1.25;padding-right:1rem}
 .a-block.selected .a-name{color:var(--orange)}
-
 .a-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.1rem}
 .tag{font-size:.62rem;letter-spacing:.04em;border-radius:4px;padding:.15rem .4rem;line-height:1.4}
 .tag-headliner{color:var(--yellow);background:rgba(255,214,0,.08);border:1px solid rgba(255,214,0,.22)}
 .tag-genre{color:var(--muted);background:var(--muted2);border:1px solid transparent}
 
-/* STICKY BOTTOM BAR */
 .bottom-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(13,13,13,.92);backdrop-filter:blur(12px);border-top:1px solid var(--border);padding:.9rem 1.5rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;z-index:100}
 .bottom-info{font-size:.82rem;color:var(--muted)}
 .bottom-info span{color:var(--text);font-weight:600}
@@ -67,33 +56,29 @@ header{text-align:center;padding:2.5rem 1rem 1.75rem}
 .btn:active{transform:scale(.97)}
 .btn-primary{background:linear-gradient(135deg,var(--orange),var(--pink));color:#fff}
 .btn-primary:disabled{opacity:.3;cursor:not-allowed}
-.btn-ghost{background:none;border:1px solid var(--border);color:var(--muted);font-size:.85rem;padding:.55rem 1.2rem;letter-spacing:.06em}
-.btn-ghost:hover{border-color:var(--text);color:var(--text)}
 
-/* LOADING */
 .loading-screen{padding:4rem 1rem;max-width:420px;margin:0 auto}
 .loading-label{font-size:.82rem;color:var(--muted);margin-bottom:.9rem;letter-spacing:.02em}
 .progress-track{width:100%;height:3px;background:var(--border);border-radius:2px;overflow:hidden}
 .progress-fill{height:100%;width:0%;background:linear-gradient(90deg,var(--orange),var(--pink));border-radius:2px;transition:width .4s ease}
 
-/* RESULTS */
 .results-intro{margin-bottom:1.75rem}
 .results-based{font-size:.78rem;color:var(--muted);margin-top:.35rem}
 .results-based strong{color:var(--orange)}
-
 .results-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.75rem}
 
-.r-card{background:var(--card);border:1.5px solid var(--border);border-radius:14px;padding:1rem;display:flex;flex-direction:column;gap:.5rem;opacity:0;transform:translateY(14px);transition:opacity .4s ease,transform .4s ease}
+.r-card{background:var(--card);border:1.5px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;opacity:0;transform:translateY(14px);transition:opacity .4s ease,transform .4s ease}
 .r-card.visible{opacity:1;transform:translateY(0)}
+.r-img{width:100%;height:110px;object-fit:cover;display:block;background:var(--muted2)}
+.r-img-placeholder{width:100%;height:110px;background:var(--muted2);display:flex;align-items:center;justify-content:center;font-size:1.5rem;opacity:.3}
+.r-body{padding:1rem;display:flex;flex-direction:column;gap:.5rem}
 
 .r-card-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem}
 .r-name{font-size:.95rem;font-weight:600;line-height:1.25;flex:1}
 .r-score{font-family:'Bebas Neue',sans-serif;font-size:2rem;line-height:1;flex-shrink:0}
 .r-pct{font-size:.6rem;color:var(--muted);display:block;text-align:right;margin-top:-2px}
-
 .r-bar-track{height:3px;background:var(--border);border-radius:2px;overflow:hidden}
 .r-bar-fill{height:100%;border-radius:2px;width:0;transition:width .7s cubic-bezier(.4,0,.2,1)}
-
 .r-reason{font-size:.78rem;color:var(--muted);line-height:1.55}
 
 .s-high{border-color:rgba(255,92,0,.3)}
@@ -106,8 +91,7 @@ header{text-align:center;padding:2.5rem 1rem 1.75rem}
 .s-low .r-bar-fill{background:#444}
 
 .error-box{background:rgba(255,45,122,.08);border:1px solid rgba(255,45,122,.25);border-radius:10px;padding:1rem 1.25rem;color:var(--pink);font-size:.83rem;line-height:1.6}
-
-.spotify-btn{display:inline-flex;align-items:center;gap:.4rem;margin-top:.6rem;background:#1DB954;border:none;border-radius:999px;padding:.35rem .85rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:600;cursor:pointer;text-decoration:none;transition:opacity .15s}
+.spotify-btn{display:inline-flex;align-items:center;gap:.4rem;background:#1DB954;border:none;border-radius:999px;padding:.35rem .85rem;color:#fff;font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:600;cursor:pointer;text-decoration:none;transition:opacity .15s}
 .spotify-btn:hover{opacity:.85}
 .spotify-btn svg{width:13px;height:13px;fill:#fff;flex-shrink:0}
 </style>
@@ -119,21 +103,17 @@ header{text-align:center;padding:2.5rem 1rem 1.75rem}
   <div class="subtitle">Grant Park, Chicago &nbsp;·&nbsp; July 30 – Aug 2</div>
 </header>
 
-<!-- STEP 1: Pick artists you know -->
 <div class="step active" id="step1">
   <div class="step-eyebrow">Step 1 of 2</div>
   <div class="step-title">Who do you already know?</div>
   <div class="step-sub">Pick any artists from the Lolla 2026 lineup you already like. We'll use your picks to recommend who else you should see.</div>
-
   <div class="search-wrap">
     <span class="search-icon">🔍</span>
     <input class="search-input" id="searchInput" type="text" placeholder="Search the lineup..." autocomplete="off"/>
   </div>
-
   <div id="pickList"></div>
 </div>
 
-<!-- STEP 2: Results -->
 <div class="step" id="step2">
   <div id="loadingScreen" class="loading-screen">
     <div class="loading-label">Creating your recommendations</div>
@@ -150,191 +130,104 @@ header{text-align:center;padding:2.5rem 1rem 1.75rem}
   </div>
 </div>
 
-<!-- BOTTOM BAR -->
-<div class="bottom-bar" id="bottomBar">
+<div class="bottom-bar">
   <div class="bottom-info">Selected: <span id="selCount">0</span> artists</div>
   <button class="btn btn-primary" id="mainBtn" disabled>Find My Matches →</button>
 </div>
 
 <script>
+const WORKER = 'https://fest-match-worker.hpld1234.workers.dev';
+
 const LINEUP = [
-  {name:"Charli xcx",h:true},
-  {name:"Tate McRae",h:true},
-  {name:"Lorde",h:true},
-  {name:"Olivia Dean",h:true},
-  {name:"John Summit",h:true},
-  {name:"Jennie",h:true},
-  {name:"The Smashing Pumpkins",h:true},
-  {name:"The xx",h:true},
-  {name:"Lil Uzi Vert",h:false},
-  {name:"Turnstile",h:false},
-  {name:"Sombr",h:false},
-  {name:"The Neighbourhood",h:false},
-  {name:"Yungblud",h:false},
-  {name:"Beabadoobee",h:false},
-  {name:"Ethel Cain",h:false},
-  {name:"Empire of the Sun",h:false},
-  {name:"Major Lazer",h:false},
-  {name:"Aespa",h:false},
-  {name:"The Chainsmokers",h:false},
-  {name:"Disco Lines",h:false},
-  {name:"Not for Radio",h:false},
-  {name:"Leon Thomas",h:false},
-  {name:"Clipse",h:false},
-  {name:"Muna",h:false},
-  {name:"Zara Larsson",h:false},
-  {name:"Geese",h:false},
-  {name:"Freddie Gibbs",h:false},
-  {name:"Wet Leg",h:false},
-  {name:"Worship",h:false},
-  {name:"Blood Orange",h:false},
-  {name:"Suki Waterhouse",h:false},
-  {name:"I-dle",h:false},
-  {name:"Alison Wonderland",h:false},
-  {name:"5 Seconds of Summer",h:false},
-  {name:"Kettama",h:false},
-  {name:"Hot Mulligan",h:false},
-  {name:"Yoasobi",h:false},
-  {name:"Viagra Boys",h:false},
-  {name:"Ado",h:false},
-  {name:"Mustard",h:false},
-  {name:"Audrey Hobert",h:false},
-  {name:"Jade",h:false},
-  {name:"Snow Strippers",h:false},
-  {name:"Boris Brejcha",h:false},
-  {name:"Eli Brown",h:false},
-  {name:"DJ Trixie Mattel",h:false},
-  {name:"Bbno$",h:false},
-  {name:"Paris Paloma",h:false},
-  {name:"Oklou",h:false},
-  {name:"HorsegiirL",h:false},
-  {name:"Little Simz",h:false},
-  {name:"Kwn",h:false},
-  {name:"Sienna Spiro",h:false},
-  {name:"The Story So Far",h:false},
-  {name:"Duke Dumont",h:false},
-  {name:"Max Styler",h:false},
-  {name:"Spacey Jane",h:false},
-  {name:"CMAT",h:false},
-  {name:"Boys Noize",h:false},
-  {name:"Fakemink",h:false},
-  {name:"Wolf Alice",h:false},
-  {name:"Nettspend",h:false},
-  {name:"Sidepiece",h:false},
-  {name:"Cortis",h:false},
-  {name:"Whethan",h:false},
-  {name:"Skye Newman",h:false},
-  {name:"Dombresky",h:false},
-  {name:"Monaleo",h:false},
-  {name:"Notion",h:false},
-  {name:"Ayybo",h:false},
-  {name:"Cameron Whitcomb",h:false},
-  {name:"Between Friends",h:false},
-  {name:"Khamari",h:false},
-  {name:"RØZ",h:false},
-  {name:"Adéla",h:false},
-  {name:"Riordan",h:false},
-  {name:"Loathe",h:false},
-  {name:"Balu Brigada",h:false},
-  {name:"MPH",h:false},
-  {name:"Mother Mother",h:false},
-  {name:"Quadeca",h:false},
-  {name:"Julia Wolf",h:false},
-  {name:"Wunderhorse",h:false},
-  {name:"Amble",h:false},
-  {name:"Momma",h:false},
-  {name:"Frost Children",h:false},
-  {name:"Amber Mark",h:false},
-  {name:"Ninajirachi",h:false},
-  {name:"Slayyyter",h:false},
-  {name:"Westend",h:false},
-  {name:"Kingfishr",h:false},
-  {name:"Claire Rosinkranz",h:false},
-  {name:"Goldie Boutilier",h:false},
-  {name:"Destin Conrad",h:false},
-  {name:"Waylon Wyatt",h:false},
-  {name:"54 Ultra",h:false},
-  {name:"Finn Wolfhard",h:false},
-  {name:"Haute and Freddy",h:false},
-  {name:"SB19",h:false},
-  {name:"Inji",h:false},
-  {name:"Die Spitz",h:false},
-  {name:"Devault",h:false},
-  {name:"Marlon Funaki",h:false},
-  {name:"Water from Your Eyes",h:false},
-  {name:"Bella Kay",h:false},
-  {name:"Lucy Bedroque",h:false},
-  {name:"Los Retros",h:false},
-  {name:"Ecca Vandal",h:false},
-  {name:"High Vis",h:false},
-  {name:"Vandelux",h:false},
-  {name:"Omnom",h:false},
-  {name:"Bad Nerves",h:false},
-  {name:"Jim Legxacy",h:false},
-  {name:"Chezile",h:false},
-  {name:"Asha Banks",h:false},
-  {name:"Cruz Beckham and the Breakers",h:false},
-  {name:"New Constellations",h:false},
-  {name:"Bixby",h:false},
-  {name:"The Bends",h:false},
-  {name:"PartyOf2",h:false},
-  {name:"After",h:false},
-  {name:"Avello",h:false},
-  {name:"The Army, The Navy",h:false},
-  {name:"Jae Stephens",h:false},
-  {name:"Pearly Drops",h:false},
-  {name:"Whatmore",h:false},
-  {name:"Ryman",h:false},
-  {name:"Paloma Morphy",h:false},
-  {name:"Porch Light",h:false},
-  {name:"Jackie Hollander",h:false},
-  {name:"Evening Elephants",h:false},
-  {name:"Easy Honey",h:false},
-  {name:"Stella Lefty",h:false},
-  {name:"Love Spells",h:false},
-  {name:"Day We Ran",h:false},
-  {name:"Penelope Road",h:false},
-  {name:"Know Good",h:false},
-  {name:"Faouzia",h:false},
-  {name:"Sunday (1994)",h:false},
-  {name:"MC4D",h:false},
-  {name:"Elizabeth Nichols",h:false},
-  {name:"Ella Red",h:false},
-  {name:"Chace",h:false},
-  {name:"Ella Boh",h:false},
-  {name:"Villanelle",h:false},
-  {name:"Calder Allen",h:false},
-  {name:"The Braymores",h:false},
-  {name:"Ivri",h:false},
-  {name:"Justine Skye",h:false},
-  {name:"Will Swinton",h:false},
-  {name:"Sunshine",h:false},
-  {name:"Chalk",h:false},
-  {name:"Surfing for Daisy",h:false},
-  {name:"Simon Grossmann",h:false},
-  {name:"Bradeazy",h:false},
-  {name:"Nat Myers",h:false},
-  {name:"Ink",h:false},
-  {name:"Peace Control",h:false},
-  {name:"Case Oats",h:false},
-  {name:"The Creekers",h:false},
-  {name:"Chicago Made",h:false},
-  {name:"Next of Kin",h:false},
-  {name:"Klo",h:false},
-  {name:"Valencia Grace",h:false},
-  {name:"Snacktime",h:false},
-  {name:"Emi Grace",h:false},
-  {name:"Chicago Youth Symphony Orchestras",h:false},
-  {name:"Beno",h:false},
-  {name:"Zack Martino",h:false},
-  {name:"Kim Theory",h:false},
-  {name:"Whitney Whitney",h:false},
+  {name:"Charli xcx",h:true},{name:"Tate McRae",h:true},{name:"Lorde",h:true},
+  {name:"Olivia Dean",h:true},{name:"John Summit",h:true},{name:"Jennie",h:true},
+  {name:"The Smashing Pumpkins",h:true},{name:"The xx",h:true},
+  {name:"Lil Uzi Vert",h:false},{name:"Turnstile",h:false},{name:"Sombr",h:false},
+  {name:"The Neighbourhood",h:false},{name:"Yungblud",h:false},{name:"Beabadoobee",h:false},
+  {name:"Ethel Cain",h:false},{name:"Empire of the Sun",h:false},{name:"Major Lazer",h:false},
+  {name:"Aespa",h:false},{name:"The Chainsmokers",h:false},{name:"Disco Lines",h:false},
+  {name:"Not for Radio",h:false},{name:"Leon Thomas",h:false},{name:"Clipse",h:false},
+  {name:"Muna",h:false},{name:"Zara Larsson",h:false},{name:"Geese",h:false},
+  {name:"Freddie Gibbs",h:false},{name:"Wet Leg",h:false},{name:"Worship",h:false},
+  {name:"Blood Orange",h:false},{name:"Suki Waterhouse",h:false},{name:"I-dle",h:false},
+  {name:"Alison Wonderland",h:false},{name:"5 Seconds of Summer",h:false},{name:"Kettama",h:false},
+  {name:"Hot Mulligan",h:false},{name:"Yoasobi",h:false},{name:"Viagra Boys",h:false},
+  {name:"Ado",h:false},{name:"Mustard",h:false},{name:"Audrey Hobert",h:false},
+  {name:"Jade",h:false},{name:"Snow Strippers",h:false},{name:"Boris Brejcha",h:false},
+  {name:"Eli Brown",h:false},{name:"DJ Trixie Mattel",h:false},{name:"Bbno$",h:false},
+  {name:"Paris Paloma",h:false},{name:"Oklou",h:false},{name:"HorsegiirL",h:false},
+  {name:"Little Simz",h:false},{name:"Kwn",h:false},{name:"Sienna Spiro",h:false},
+  {name:"The Story So Far",h:false},{name:"Duke Dumont",h:false},{name:"Max Styler",h:false},
+  {name:"Spacey Jane",h:false},{name:"CMAT",h:false},{name:"Boys Noize",h:false},
+  {name:"Fakemink",h:false},{name:"Wolf Alice",h:false},{name:"Nettspend",h:false},
+  {name:"Sidepiece",h:false},{name:"Cortis",h:false},{name:"Whethan",h:false},
+  {name:"Skye Newman",h:false},{name:"Dombresky",h:false},{name:"Monaleo",h:false},
+  {name:"Notion",h:false},{name:"Ayybo",h:false},{name:"Cameron Whitcomb",h:false},
+  {name:"Between Friends",h:false},{name:"Khamari",h:false},{name:"RØZ",h:false},
+  {name:"Adéla",h:false},{name:"Riordan",h:false},{name:"Loathe",h:false},
+  {name:"Balu Brigada",h:false},{name:"MPH",h:false},{name:"Mother Mother",h:false},
+  {name:"Quadeca",h:false},{name:"Julia Wolf",h:false},{name:"Wunderhorse",h:false},
+  {name:"Amble",h:false},{name:"Momma",h:false},{name:"Frost Children",h:false},
+  {name:"Amber Mark",h:false},{name:"Ninajirachi",h:false},{name:"Slayyyter",h:false},
+  {name:"Westend",h:false},{name:"Kingfishr",h:false},{name:"Claire Rosinkranz",h:false},
+  {name:"Goldie Boutilier",h:false},{name:"Destin Conrad",h:false},{name:"Waylon Wyatt",h:false},
+  {name:"54 Ultra",h:false},{name:"Finn Wolfhard",h:false},{name:"Haute and Freddy",h:false},
+  {name:"SB19",h:false},{name:"Inji",h:false},{name:"Die Spitz",h:false},
+  {name:"Devault",h:false},{name:"Marlon Funaki",h:false},{name:"Water from Your Eyes",h:false},
+  {name:"Bella Kay",h:false},{name:"Lucy Bedroque",h:false},{name:"Los Retros",h:false},
+  {name:"Ecca Vandal",h:false},{name:"High Vis",h:false},{name:"Vandelux",h:false},
+  {name:"Omnom",h:false},{name:"Bad Nerves",h:false},{name:"Jim Legxacy",h:false},
+  {name:"Chezile",h:false},{name:"Asha Banks",h:false},
+  {name:"Cruz Beckham and the Breakers",h:false},{name:"New Constellations",h:false},
+  {name:"Bixby",h:false},{name:"The Bends",h:false},{name:"PartyOf2",h:false},
+  {name:"After",h:false},{name:"Avello",h:false},{name:"The Army, The Navy",h:false},
+  {name:"Jae Stephens",h:false},{name:"Pearly Drops",h:false},{name:"Whatmore",h:false},
+  {name:"Ryman",h:false},{name:"Paloma Morphy",h:false},{name:"Porch Light",h:false},
+  {name:"Jackie Hollander",h:false},{name:"Evening Elephants",h:false},
+  {name:"Easy Honey",h:false},{name:"Stella Lefty",h:false},{name:"Love Spells",h:false},
+  {name:"Day We Ran",h:false},{name:"Penelope Road",h:false},{name:"Know Good",h:false},
+  {name:"Faouzia",h:false},{name:"Sunday (1994)",h:false},{name:"MC4D",h:false},
+  {name:"Elizabeth Nichols",h:false},{name:"Ella Red",h:false},{name:"Chace",h:false},
+  {name:"Ella Boh",h:false},{name:"Villanelle",h:false},{name:"Calder Allen",h:false},
+  {name:"The Braymores",h:false},{name:"Ivri",h:false},{name:"Justine Skye",h:false},
+  {name:"Will Swinton",h:false},{name:"Sunshine",h:false},{name:"Chalk",h:false},
+  {name:"Surfing for Daisy",h:false},{name:"Simon Grossmann",h:false},
+  {name:"Bradeazy",h:false},{name:"Nat Myers",h:false},{name:"Ink",h:false},
+  {name:"Peace Control",h:false},{name:"Case Oats",h:false},{name:"The Creekers",h:false},
+  {name:"Chicago Made",h:false},{name:"Next of Kin",h:false},{name:"Klo",h:false},
+  {name:"Valencia Grace",h:false},{name:"Snacktime",h:false},{name:"Emi Grace",h:false},
+  {name:"Chicago Youth Symphony Orchestras",h:false},{name:"Beno",h:false},
+  {name:"Zack Martino",h:false},{name:"Kim Theory",h:false},{name:"Whitney Whitney",h:false},
 ];
 
-// Genre cache so we only fetch once per session
 let genreCache = {};
+let spotifyToken = null;
+let imageCache = {};
 let selected = new Set();
 let currentStep = 1;
+
+// ── SPOTIFY ───────────────────────────────────────────────
+async function getSpotifyToken(){
+  try {
+    const res = await fetch(`${WORKER}/spotify-token`);
+    const data = await res.json();
+    spotifyToken = data.access_token;
+  } catch(e) {}
+}
+
+async function fetchArtistImages(artists){
+  if(!spotifyToken) await getSpotifyToken();
+  if(!spotifyToken) return;
+  await Promise.all(artists.map(async name => {
+    if(imageCache[name]) return;
+    try {
+      const res = await fetch(`${WORKER}/spotify-artist?token=${spotifyToken}&name=${encodeURIComponent(name)}`);
+      const data = await res.json();
+      const img = data?.artists?.items?.[0]?.images?.[0]?.url;
+      if(img) imageCache[name] = img;
+    } catch(e) {}
+  }));
+}
 
 // ── BUILD STEP 1 ──────────────────────────────────────────
 function buildPickList(filter=''){
@@ -354,7 +247,6 @@ function buildPickList(filter=''){
     const block = document.createElement('div');
     block.className = 'a-block' + (selected.has(a.name) ? ' selected' : '') + (show ? '' : ' hidden');
     block.dataset.name = a.name;
-
     const genre = genreCache[a.name] || '';
     block.innerHTML = `
       <div class="a-name">${a.name}</div>
@@ -362,7 +254,6 @@ function buildPickList(filter=''){
         ${a.h ? '<span class="tag tag-headliner">Headliner</span>' : ''}
         ${genre ? `<span class="tag tag-genre">${genre}</span>` : '<span class="tag tag-genre" style="opacity:.35">loading...</span>'}
       </div>`;
-
     block.addEventListener('click', () => {
       selected.has(a.name) ? selected.delete(a.name) : selected.add(a.name);
       block.classList.toggle('selected');
@@ -374,48 +265,36 @@ function buildPickList(filter=''){
 
   const headliners = LINEUP.filter(a => a.h);
   const others = LINEUP.filter(a => !a.h);
-
   const hlGrid = document.createElement('div');
   hlGrid.className = 'artist-grid';
   headliners.forEach(a => hlGrid.appendChild(makeBlock(a)));
-
   const otherGrid = document.createElement('div');
   otherGrid.className = 'artist-grid';
   others.forEach(a => otherGrid.appendChild(makeBlock(a)));
-
   const anyHL = headliners.some(a => !f || a.name.toLowerCase().includes(f));
   const anyOther = others.some(a => !f || a.name.toLowerCase().includes(f));
-
   if(anyHL){ addLabel('Headliners'); container.appendChild(hlGrid); }
   if(anyOther){ addLabel('Full Lineup'); container.appendChild(otherGrid); }
 }
 
-// ── FETCH GENRES FROM CLAUDE ──────────────────────────────
+// ── FETCH GENRES ──────────────────────────────────────────
 async function fetchGenres(){
   if(Object.keys(genreCache).length > 0) return;
-
   const names = LINEUP.map(a => a.name).join(', ');
   const prompt = `For each of these Lollapalooza 2026 artists, give a short genre label (2-3 words max, e.g. "Indie Rock", "Alt Pop", "House/Techno", "Hip-Hop").
 Return ONLY a raw JSON object mapping artist name to genre string. No markdown, no extra text.
 Artists: ${names}`;
-
   try {
-    const res = await fetch("https://fest-match-worker.hpld1234.workers.dev", {
-      method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 3000,
-        messages: [{role:"user", content:prompt}]
-      })
+    const res = await fetch(`${WORKER}/anthropic`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:3000,messages:[{role:'user',content:prompt}]})
     });
     const data = await res.json();
     let raw = (data?.content?.[0]?.text || '').replace(/```json|```/g,'').trim();
     genreCache = JSON.parse(raw);
     buildPickList(document.getElementById('searchInput').value);
-  } catch(e) {
-    // Genres failed silently — blocks still work, just no genre tag
-  }
+  } catch(e) {}
 }
 
 // ── STEP NAV ──────────────────────────────────────────────
@@ -458,7 +337,6 @@ function resetApp(){
 // ── MATCH LOGIC ───────────────────────────────────────────
 async function startMatch(){
   goTo(2);
-
   const fill = document.getElementById('progressFill');
   fill.style.width = '0%';
   let progress = 0;
@@ -468,7 +346,6 @@ async function startMatch(){
 
   const liked = [...selected].join(', ');
   const rest = LINEUP.filter(a => !selected.has(a.name)).map(a => a.name).join(', ');
-
   const prompt = `You are a music festival expert at Lollapalooza 2026.
 
 A user likes these artists from the lineup: ${liked}.
@@ -479,24 +356,21 @@ ${rest}
 Rules:
 - Return exactly 10 artists sorted highest to lowest.
 - Score each 0–100 honestly based on taste match.
+- Only recommend artists from the provided rest list — never include artists from the liked list.
 - Return ONLY a raw JSON array, no markdown or extra text.
 - Format: [{"artist":"exact name","score":84,"reason":"One punchy sentence explaining the connection to their picks."}]`;
 
   try {
-    const res = await fetch("https://fest-match-worker.hpld1234.workers.dev", {
-      method: "POST",
-      headers: {"Content-Type":"application/json"},
-      body: JSON.stringify({
-        model: "claude-sonnet-4-20250514",
-        max_tokens: 2000,
-        messages: [{role:"user", content:prompt}]
-      })
+    const res = await fetch(`${WORKER}/anthropic`, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:2000,messages:[{role:'user',content:prompt}]})
     });
     const data = await res.json();
     let raw = (data?.content?.[0]?.text || '').replace(/```json|```/g,'').trim();
     let results = JSON.parse(raw);
-    // Client-side safety net — strip any artist the user already picked
     results = results.filter(r => !selected.has(r.artist));
+    await fetchArtistImages(results.map(r => r.artist));
     clearInterval(tick);
     fill.style.width = '100%';
     setTimeout(() => renderResults(results, liked), 350);
@@ -508,7 +382,7 @@ Rules:
       document.getElementById('resultsScreen').style.display = 'block';
       const eb = document.getElementById('errorBox');
       eb.style.display = 'block';
-      eb.textContent = 'Something went wrong. Make sure the Cloudflare Worker API proxy is configured, then try again.';
+      eb.textContent = 'Something went wrong. Check the Cloudflare Worker is configured correctly and try again.';
     }, 350);
   }
 }
@@ -516,7 +390,6 @@ Rules:
 function renderResults(results, liked){
   document.getElementById('loadingScreen').style.display = 'none';
   document.getElementById('resultsScreen').style.display = 'block';
-
   const names = liked.split(', ');
   document.getElementById('resultsBased').innerHTML =
     `Based on your love of <strong>${names.slice(0,3).join(', ')}${names.length > 3 ? ` and ${names.length - 3} more` : ''}</strong>`;
@@ -528,30 +401,35 @@ function renderResults(results, liked){
     const tier = r.score >= 70 ? 's-high' : r.score >= 45 ? 's-med' : 's-low';
     const isHL = LINEUP.find(a => a.name === r.artist)?.h;
     const genre = genreCache[r.artist] || '';
+    const img = imageCache[r.artist];
 
     const card = document.createElement('div');
     card.className = `r-card ${tier}`;
     card.innerHTML = `
-      <div class="r-card-top">
-        <div class="r-name">${r.artist}</div>
-        <div>
-          <div class="r-score">${r.score}</div>
-          <span class="r-pct">/ 100</span>
+      ${img
+        ? `<img class="r-img" src="${img}" alt="${r.artist}" loading="lazy"/>`
+        : `<div class="r-img-placeholder">🎵</div>`}
+      <div class="r-body">
+        <div class="r-card-top">
+          <div class="r-name">${r.artist}</div>
+          <div>
+            <div class="r-score">${r.score}</div>
+            <span class="r-pct">/ 100</span>
+          </div>
         </div>
-      </div>
-      <div class="r-bar-track"><div class="r-bar-fill"></div></div>
-      <div class="a-tags" style="margin-top:.1rem">
-        ${isHL ? '<span class="tag tag-headliner">Headliner</span>' : ''}
-        ${genre ? `<span class="tag tag-genre">${genre}</span>` : ''}
-      </div>
-      <div class="r-reason">${r.reason}</div>
-      <a class="spotify-btn" href="https://open.spotify.com/search/${encodeURIComponent(r.artist)}" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-        Listen on Spotify
-      </a>`;
+        <div class="r-bar-track"><div class="r-bar-fill"></div></div>
+        <div class="a-tags" style="margin-top:.1rem">
+          ${isHL ? '<span class="tag tag-headliner">Headliner</span>' : ''}
+          ${genre ? `<span class="tag tag-genre">${genre}</span>` : ''}
+        </div>
+        <div class="r-reason">${r.reason}</div>
+        <a class="spotify-btn" href="https://open.spotify.com/search/${encodeURIComponent(r.artist)}" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          Listen on Spotify
+        </a>
+      </div>`;
 
     grid.appendChild(card);
-
     setTimeout(() => {
       card.classList.add('visible');
       const fill = card.querySelector('.r-bar-fill');
@@ -563,6 +441,7 @@ function renderResults(results, liked){
 // ── INIT ──────────────────────────────────────────────────
 buildPickList();
 fetchGenres();
+getSpotifyToken();
 document.getElementById('searchInput').addEventListener('input', e => buildPickList(e.target.value));
 document.getElementById('mainBtn').addEventListener('click', () => {
   if(currentStep === 1) startMatch();
